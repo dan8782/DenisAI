@@ -1,5 +1,5 @@
 // const fs = require('fs');
-import { denisHuesos } from './denisAI.js';
+import { denisHuesos } from './trainingData/denisAI.js';
 import brain from './browser.js'
 
 // const denisHuesos = require('./denisAI.js');
