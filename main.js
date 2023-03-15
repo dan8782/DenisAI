@@ -1,6 +1,6 @@
 // const fs = require('fs');
 import { denisHuesos } from './trainingData/denisAI.js';
-import brain from './browser.js'
+import brain from './lib/browser.js'
 
 // const denisHuesos = require('./denisAI.js');
 // const brain = require('./node_modules/brain.js-master');
