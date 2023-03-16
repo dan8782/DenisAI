@@ -1,13 +1,14 @@
 // const fs = require('fs');
 import { denisHuesos } from './trainingData/denisAI.js';
 import brain from './lib/browser.js'
+import fs from 'fs'
 
 // const denisHuesos = require('./denisAI.js');
 // const brain = require('./node_modules/brain.js-master');
 
 const lstm = new brain.recurrent.LSTM();
 const result = lstm.train(denisHuesos, {
-  iterations: 1,
+  iterations: 20000,
   log: (details) => console.log(details),
   errorThresh: 0.011,
 });
@@ -19,6 +20,15 @@ const neuro_json = lstm.toJSON();
 
 console.log('run 1: Jane' + run1);
 console.log(neuro_json);
+
+const data = JSON.stringify(neuro_json)
+
+fs.writeFile('penis_model.json', data, err => {
+    if (err) {
+      throw err
+    }
+    console.log('JSON data is saved.')
+  })
 
 // Specify the path to the JSON file
 // const filePath = './result.json';
